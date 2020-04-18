@@ -4,8 +4,6 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { PostComponent } from "./shared/post/post.component";
-import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { AuthModule } from "./auth/auth.module";
 import { CoreModule } from "./core/core.module";
 
