@@ -29,9 +29,14 @@
     flex-direction: row;
     margin: 4px 10px;
 
+    .unlike-icon {
+      margin-right: 10px;
+      font-size: 16px;
+    }
     .like-icon {
       margin-right: 10px;
       font-size: 16px;
+      color: red;
     }
     .total-likes {
       font-size: 16px;
