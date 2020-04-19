@@ -12,6 +12,7 @@ import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { ViewPostComponent } from "./view-post/view-post.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { MyProfileComponent } from "./my-profile/my-profile.component";
+import { UsersListComponent } from "./shared/users-list/users-list.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MyProfileComponent } from "./my-profile/my-profile.component";
     ViewPostComponent,
     UserProfileComponent,
     MyProfileComponent,
+    UsersListComponent,
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,7 @@ import { CoreComponent } from "./core.component";
 import { ViewPostComponent } from "./view-post/view-post.component";
 import { MyProfileComponent } from "./my-profile/my-profile.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { UsersListComponent } from "./shared/users-list/users-list.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
       { path: "profile", component: MyProfileComponent },
       { path: "user/:id", component: UserProfileComponent },
       { path: "post/:id", component: ViewPostComponent },
+      {
+        path: "users/:type/:id",
+        component: UsersListComponent,
+      },
       { path: "", redirectTo: "feed", pathMatch: "full" },
     ],
   },
