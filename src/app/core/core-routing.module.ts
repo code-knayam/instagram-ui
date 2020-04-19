@@ -10,7 +10,7 @@ const routes: Routes = [
     path: "",
     component: CoreComponent,
     children: [
-      { path: "feed", component: FeedComponent },
+      { path: "", component: FeedComponent },
       { path: "add", component: AddPostComponent },
       { path: "profile", component: ProfileComponent },
     ],

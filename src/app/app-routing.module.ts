@@ -6,11 +6,11 @@ import { AuthComponent } from "./auth/auth.component";
 const routes: Routes = [
   {
     path: "auth",
-    component: AuthComponent,
+    loadChildren: () => import("./auth/auth.module").then((m) => m.AuthModule),
   },
   {
     path: "",
-    component: CoreComponent,
+    loadChildren: () => import("./core/core.module").then((m) => m.CoreModule),
   },
 ];
 
