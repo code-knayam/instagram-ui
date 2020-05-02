@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-sign-up",
@@ -8,7 +9,7 @@ import { FormBuilder, Validators } from "@angular/forms";
 })
 export class SignUpComponent implements OnInit {
   signUpForm;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.signUpForm = this.fb.group({
@@ -17,12 +18,20 @@ export class SignUpComponent implements OnInit {
       username: ["", [Validators.required, Validators.minLength(5)]],
       password: [
         "",
-        [Validators.required, Validators.pattern("[a-zA-Z 0-9_@#]*")],
+        [
+          Validators.required,
+          Validators.pattern("[a-zA-Z 0-9_@#]*"),
+          Validators.minLength(5),
+        ],
       ],
     });
   }
 
   onSubmit() {
     console.warn(this.signUpForm.values);
+  }
+
+  redirectToSignIn() {
+    this.router.navigate(["/auth"]);
   }
 }
