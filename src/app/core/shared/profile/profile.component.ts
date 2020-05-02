@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -7,6 +7,14 @@ import { Router } from "@angular/router";
   styleUrls: ["./profile.component.scss"],
 })
 export class ProfileComponent implements OnInit {
+  @Input() profile: any = {};
+  @Input() posts: any = [];
+  @Input() config = {
+    isActiveUser: false,
+    showFollowButton: false,
+    showUnfollowButton: false,
+  };
+
   constructor(private router: Router) {}
 
   ngOnInit() {}

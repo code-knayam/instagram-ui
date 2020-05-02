@@ -2,21 +2,20 @@ import { Injectable } from "@angular/core";
 import {
   HttpInterceptor,
   HttpRequest,
-  HttpHandler
+  HttpHandler,
 } from "@angular/common/http";
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable()
 export class InterceptorService implements HttpInterceptor {
-  BASE_URL = `localhost:8080/api`;
+  BASE_URL = `http://localhost:8080/api/`;
 
   constructor() {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
+    console.log(request);
     request = request.clone({
       setHeaders: {},
-      url: this.BASE_URL = request.url
+      url: this.BASE_URL + request.url,
     });
 
     return next.handle(request);
