@@ -15,23 +15,23 @@
     <div class="profile-info">
       <p class="info">
         <span class="count">
-          200
+          {{ posts?.length }}
         </span>
         <span class="label">
           Posts
         </span>
       </p>
-      <p class="info">
+      <p class="info" (click)="redirectTo('followers')">
         <span class="count">
-          200
+          {{ profile.followers }}
         </span>
         <span class="label">
           Followers
         </span>
       </p>
-      <p class="info">
+      <p class="info" (click)="redirectTo('followees')">
         <span class="count">
-          200
+          {{ profile.followees }}
         </span>
         <span class="label">
           Following

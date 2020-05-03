@@ -1,9 +1,9 @@
 <div class="list">
   <div class="heading">
-    <p class="title">Followers</p>
+    <p class="title">{{ type }}</p>
   </div>
   <div class="users">
-    <div class="user">
+    <div *ngFor="let user of userList" class="user">
       <div class="user-info">
         <img
           class="user-profile-image"

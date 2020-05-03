@@ -10,4 +10,12 @@ export class UserService {
   getUserDetails(userId) {
     return this.http.get(`user/${userId}`);
   }
+
+  getFollowers(userId) {
+    return this.http.get(`user/${userId}/followers`);
+  }
+
+  getFollowees(userId) {
+    return this.http.get(`user/${userId}/followees`);
+  }
 }
