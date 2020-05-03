@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { UserService } from "../../services/user.service";
 import { FOLLOWERS, FOLLOWEES } from "../constants";
 
@@ -15,7 +15,8 @@ export class UsersListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -35,7 +36,12 @@ export class UsersListComponent implements OnInit {
     } else if (this.type === FOLLOWEES) {
       this.userService.getFollowees(this.userId).subscribe((resp) => {
         this.userList = resp;
+        // this.userList = [{ id: "5e8607d2b6bbbb6de93bf06f" }];
       });
     }
+  }
+
+  redirectToUser(user) {
+    this.router.navigate([`/user/${user.id}`]);
   }
 }

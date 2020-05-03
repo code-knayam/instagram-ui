@@ -29,13 +29,15 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userService.getUserDetails(this.userId).subscribe((resp) => {
-      this.profile = resp;
-    });
+    if (this.userId) {
+      this.userService.getUserDetails(this.userId).subscribe((resp) => {
+        this.profile = resp;
+      });
 
-    this.postService.getPostsByUserId(this.userId).subscribe((resp: any) => {
-      this.posts = resp;
-    });
+      this.postService.getPostsByUserId(this.userId).subscribe((resp: any) => {
+        this.posts = resp;
+      });
+    }
   }
 
   redirectToPost() {
