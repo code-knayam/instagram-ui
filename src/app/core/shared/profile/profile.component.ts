@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Router } from "@angular/router";
 import { UserService } from "../../services/user.service";
 import { PostService } from "../../services/post.service";
+import { FOLLOWEES, FOLLOWERS } from "../constants";
 
 @Component({
   selector: "app-profile",
@@ -18,6 +19,8 @@ export class ProfileComponent implements OnInit {
 
   profile: any = {};
   posts: any = [];
+  FOLLOWERS = FOLLOWERS;
+  FOLLOWEES = FOLLOWEES;
 
   constructor(
     private router: Router,

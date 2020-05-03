@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { UserService } from "../../services/user.service";
+import { FOLLOWERS, FOLLOWEES } from "../constants";
 
 @Component({
   selector: "app-users-list",
@@ -27,11 +28,11 @@ export class UsersListComponent implements OnInit {
   }
 
   getUserList() {
-    if (this.type === "followers") {
+    if (this.type === FOLLOWERS) {
       this.userService.getFollowers(this.userId).subscribe((resp) => {
         this.userList = resp;
       });
-    } else if (this.type === "followees") {
+    } else if (this.type === FOLLOWEES) {
       this.userService.getFollowees(this.userId).subscribe((resp) => {
         this.userList = resp;
       });
