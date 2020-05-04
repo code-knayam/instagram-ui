@@ -5,7 +5,9 @@
       src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg"
       alt=""
     />
-    <p class="user-name">{{ postDetails.userName }}</p>
+    <p class="user-name" (click)="redirectToUser()">
+      {{ postDetails.userName }}
+    </p>
   </div>
   <div class="media-container">
     <img
@@ -21,7 +23,9 @@
   </div>
   <div class="caption-container">
     <span class="caption">
-      <span class="user-name">{{ postDetails.userName }}</span>
+      <span class="user-name" (click)="redirectToUser()">{{
+        postDetails.userName
+      }}</span>
       {{ postDetails.caption }}</span
     >
   </div>
