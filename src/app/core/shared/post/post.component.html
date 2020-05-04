@@ -5,7 +5,7 @@
       src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg"
       alt=""
     />
-    <p class="user-name">test user</p>
+    <p class="user-name">{{ postDetails.userName }}</p>
   </div>
   <div class="media-container">
     <img
@@ -17,19 +17,15 @@
   <div class="likes-container">
     <fa class="unlike-icon" name="heart-o"></fa>
     <fa class="like-icon" name="heart"></fa>
-    <p class="total-likes">1000 likes</p>
+    <p class="total-likes">{{ postDetails.totalLikes }} likes</p>
   </div>
   <div class="caption-container">
     <span class="caption">
-      <span class="user-name">test user</span>
-      test captiontest captiontest captiontest captiontest captiontest
-      captiontest captiontest captiontest captiontest captiontest captiontest
-      captiontest captiontest captiontest captiontest captiontest captiontest
-      captiontest captiontest captiontest captiontest captiontest captiontest
-      captiontest captiontest caption</span
+      <span class="user-name">{{ postDetails.userName }}</span>
+      {{ postDetails.caption }}</span
     >
   </div>
   <p class="time-stamp">
-    9 hours ago
+    {{ postDetails.createdOn | date }}
   </p>
 </div>

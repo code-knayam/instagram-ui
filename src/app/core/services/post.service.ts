@@ -10,4 +10,8 @@ export class PostService {
   getPostsByUserId(userId) {
     return this.http.get(`posts/user/${userId}`);
   }
+
+  getPostDetailsById(postId) {
+    return this.http.get(`posts/${postId}`);
+  }
 }

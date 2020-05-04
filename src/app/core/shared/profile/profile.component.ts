@@ -40,8 +40,8 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  redirectToPost() {
-    this.router.navigate(["/post/123"]);
+  redirectToPost(post) {
+    this.router.navigate([`/post/${post.id}`]);
   }
 
   redirectTo(type) {
