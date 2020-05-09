@@ -18,4 +18,12 @@ export class UserService {
   getFollowees(userId) {
     return this.http.get(`user/${userId}/followees`);
   }
+
+  followUser(userId1, userId2) {
+    return this.http.post(`user/follow/${userId1}/${userId2}`, {});
+  }
+
+  unfollowUser(userId1, userId2) {
+    return this.http.post(`user/unfollow/${userId1}/${userId2}`, {});
+  }
 }

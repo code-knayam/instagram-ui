@@ -45,7 +45,17 @@ export class UsersListComponent implements OnInit {
     this.router.navigate([`/user/${user.id}`]);
   }
 
-  unfollowUser() {}
+  unfollowUser(user) {
+    this.userService.unfollowUser(this.userId, user.id).subscribe((resp) => {
+      console.log(resp);
+      this.getUserList();
+    });
+  }
 
-  followUser() {}
+  followUser(user) {
+    this.userService.followUser(this.userId, user.id).subscribe((resp) => {
+      console.log(resp);
+      this.getUserList();
+    });
+  }
 }

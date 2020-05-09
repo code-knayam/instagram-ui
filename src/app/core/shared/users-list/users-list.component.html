@@ -16,12 +16,12 @@
         </p>
       </div>
       <ng-container *ngIf="user.isFollowed; else elseTemplate">
-        <button (click)="unfollowUser()" class="following-btn">
+        <button (click)="unfollowUser(user)" class="following-btn">
           Following
         </button>
       </ng-container>
       <ng-template #elseTemplate>
-        <button (click)="followUser()" class="follow-btn">Follow</button>
+        <button (click)="followUser(user)" class="follow-btn">Follow</button>
       </ng-template>
     </div>
   </div>
