@@ -15,8 +15,14 @@
           <span class="name">{{ user.name }}</span>
         </p>
       </div>
-      <button class="following-btn">Following</button>
-      <button class="follow-btn">Following</button>
+      <ng-container *ngIf="user.isFollowed; else elseTemplate">
+        <button (click)="unfollowUser()" class="following-btn">
+          Following
+        </button>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <button (click)="followUser()" class="follow-btn">Follow</button>
+      </ng-template>
     </div>
   </div>
 </div>

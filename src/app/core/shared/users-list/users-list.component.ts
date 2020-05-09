@@ -44,4 +44,8 @@ export class UsersListComponent implements OnInit {
   redirectToUser(user) {
     this.router.navigate([`/user/${user.id}`]);
   }
+
+  unfollowUser() {}
+
+  followUser() {}
 }
