@@ -14,4 +14,8 @@ export class PostService {
   getPostDetailsById(postId) {
     return this.http.get(`posts/${postId}`);
   }
+
+  getPostsFeedByUserId(userId) {
+    return this.http.get(`posts/user/feed/${userId}`);
+  }
 }

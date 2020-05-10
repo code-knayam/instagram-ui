@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PostService } from "../../services/post.service";
 
@@ -8,8 +8,8 @@ import { PostService } from "../../services/post.service";
   styleUrls: ["./post.component.scss"],
 })
 export class PostComponent implements OnInit {
-  postId = "";
-  postDetails: any = {};
+  @Input() postId = "";
+  @Input() postDetails: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -19,8 +19,10 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.postId = params.id;
-      this.getPostDetails();
+      if (params.id) {
+        this.postId = params.id;
+        this.getPostDetails();
+      }
     });
   }
 
