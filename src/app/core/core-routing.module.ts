@@ -8,6 +8,7 @@ import { ViewPostComponent } from "./view-post/view-post.component";
 import { MyProfileComponent } from "./my-profile/my-profile.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { UsersListComponent } from "./shared/users-list/users-list.component";
+import { SearchComponent } from "./search/search.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
     component: CoreComponent,
     children: [
       { path: "feed", component: FeedComponent },
+      { path: "search", component: SearchComponent },
       { path: "add", component: AddPostComponent },
       { path: "profile", component: MyProfileComponent },
       { path: "user/:id", component: UserProfileComponent },

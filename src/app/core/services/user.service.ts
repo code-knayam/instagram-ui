@@ -26,4 +26,8 @@ export class UserService {
   unfollowUser(userId1, userId2) {
     return this.http.post(`user/unfollow/${userId1}/${userId2}`, {});
   }
+
+  searchUser(query) {
+    return this.http.get(`user/search/${query}`);
+  }
 }

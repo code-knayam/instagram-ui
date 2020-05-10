@@ -13,6 +13,8 @@ import { ViewPostComponent } from "./view-post/view-post.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { MyProfileComponent } from "./my-profile/my-profile.component";
 import { UsersListComponent } from "./shared/users-list/users-list.component";
+import { SearchComponent } from "./search/search.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,12 +28,15 @@ import { UsersListComponent } from "./shared/users-list/users-list.component";
     UserProfileComponent,
     MyProfileComponent,
     UsersListComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     CoreRoutingModule,
     AngularFontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class CoreModule {}
